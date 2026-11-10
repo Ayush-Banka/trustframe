@@ -817,7 +817,7 @@ sup.ref a:hover { color: var(--ink); }
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1.1fr 0.7fr 1.4fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 40px;
   padding-block: clamp(48px, 6vw, 72px) 40px;
 }
@@ -1529,14 +1529,6 @@ main:focus { outline: none; }
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="footer-notes">
-        <p class="footer-notes-title">Notes</p>
-        <ol>
-          <li>TrustFrame is under development. The capabilities described on this site are planned and may change.</li>
-          <li>Exhibits are concept previews built on fictional examples. They do not show real bank or regulatory data.</li>
-          <li>Messages sent through the contact form are delivered by Formspree, a form service. This website does not store them itself.</li>
-        </ol>
-      </div>
     </div>
     <div class="wrap footer-bottom">
       <p>&copy; <span data-year>2026</span> TrustFrame</p>
