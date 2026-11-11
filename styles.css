@@ -1780,6 +1780,20 @@ button.aff::after { content: " \2191"; content: " \2191" / ""; color: var(--teal
   .menu-toggle { padding-inline: 10px; }
 }
 
+/* Phones: centre the top of each page (kicker, headline, intro, buttons).
+   Side notes, contact rows and the longer text further down stay left aligned. */
+@media (max-width: 719px) {
+  .hero .body > .kicker,
+  .hero .body > h1,
+  .hero .body > .lead,
+  .page-head .body > h1,
+  .page-head .body > .lead { text-align: center; }
+  .hero .body > .lead,
+  .page-head .body > .lead { margin-inline: auto; }
+  .hero .actions,
+  .hero .principles { justify-content: center; }
+}
+
 /* ---------- 404: source not found ---------- */
 .nf { padding-block: clamp(48px, 7vw, 96px) clamp(40px, 5vw, 64px); overflow-x: hidden; overflow-x: clip; }
 .nf > .row { --col-num: clamp(120px, 13vw, 190px); }
