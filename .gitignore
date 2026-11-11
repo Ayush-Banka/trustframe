@@ -1,0 +1,4 @@
+# Local working files. They are not part of the website.
+_source/
+preview-shots/
+.DS_Store
