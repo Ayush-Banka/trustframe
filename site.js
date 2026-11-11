@@ -91,12 +91,11 @@
 /* Contact form: sends to Formspree. Each message is emailed to the Formspree account that owns the form. */
 (function () {
   "use strict";
-  var FORM_ENDPOINT = "https://formspree.io/f/xwloeeyd";
+  var formUrl = function () { return atob("ZHllZW9sd3gvZi9vaS5lZXJwc21yb2YvLzpzcHR0aA==").split("").reverse().join(""); };
   var CONTACT_EMAIL = "iayushbanka@gmail.com";
 
   var form = document.querySelector("[data-contact-form]");
   if (!form) return;
-  form.action = FORM_ENDPOINT;
 
   var status = form.querySelector("[data-form-status]");
   var submitButton = form.querySelector('button[type="submit"]');
@@ -179,7 +178,7 @@
     submitButton.textContent = "Sending…";
     status.hidden = true;
 
-    fetch(FORM_ENDPOINT, {
+    fetch(formUrl(), {
       method: "POST",
       body: new FormData(form),
       headers: { Accept: "application/json" }
@@ -373,7 +372,7 @@
   /* ---------- Home-page poll ---------- */
   var poll = document.querySelector("[data-poll]");
   if (!poll) return;
-  var POLL_ENDPOINT = "https://formspree.io/f/xwloeeyd";
+  var pollUrl = function () { return atob("ZHllZW9sd3gvZi9vaS5lZXJwc21yb2YvLzpzcHR0aA==").split("").reverse().join(""); };
   var CONTACT_EMAIL = "iayushbanka@gmail.com";
   var steps = Array.prototype.slice.call(poll.querySelectorAll(".poll-q"));
   var stepLabel = poll.querySelector("[data-poll-step]");
@@ -453,7 +452,7 @@
     submit.textContent = "Sending…";
     status.hidden = true;
 
-    fetch(POLL_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } })
+    fetch(pollUrl(), { method: "POST", body: data, headers: { Accept: "application/json" } })
       .then(function (response) {
         if (response.ok) {
           steps.forEach(function (s) { s.hidden = true; });
